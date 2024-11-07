@@ -1,0 +1,121 @@
+<div class="music-tracks-container">
+    <div class="controls">
+        <button class="create-btn" (click)="openCreateModal()">Create New Track</button>
+        <input
+            type="text"
+            placeholder="Search by Song Title"
+            [(ngModel)]="searchTerm"
+            (input)="filterTracks()"
+            class="search-bar"
+        />
+
+        <button (click)="goToBookmarks()" class="bookmark-btn" style="height: 0%; margin-top: 6%; margin-left: 5%;">
+          <i class="fa fa-bookmark"></i>
+        </button>
+        
+        
+    </div>
+    
+<div class="card-grid">
+    <div class="card" *ngFor="let track of filteredMusicTracks">
+        <div class="card-header">
+            <h3>{{ track.Title }}</h3>
+            <p>{{ track.Artist }} - {{ track.Album }}</p>
+            <span class="release-year">{{ track.Release_year }}</span>
+
+            <button (click)="addToBookmarks(track)" class="bookmark-btn" style="height:0%;
+            margin-top: 6%;
+            margin-left: 5%;">
+              <i class="fa fa-bookmark"></i> <!-- You can use FontAwesome icon or any other icon -->
+            </button>
+            
+        </div>
+        <div class="card-body">
+            <div class="genre-duration">
+                    <span class="genre">{{ track.Genre_Name }}</span>
+
+               
+                <span class="duration">{{ track.Duration }}</span>
+            </div>
+        </div>
+        <div class="card-footer">
+            <button (click)="editTrack(track)" class="edit-btn delete-btn">Edit</button>
+            <button (click)="openConfirmationModal(track.id)" class="delete-btn">Delete</button>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Confirmation Modal -->
+    <div *ngIf="isConfirmationModalOpen" class="modal">
+        <div class="modal-content zoomIn-animation">
+            <span class="close" (click)="closeConfirmationModal()">&times;</span>
+            <h2>Confirmation</h2>
+            <p>Are you sure you want to delete this track?</p>
+            <button (click)="confirmDelete()" class="confirm-btn">Yes, Delete</button>
+            <button (click)="closeConfirmationModal()" class="cancel-btn">Cancel</button>
+        </div>
+    </div>
+
+
+    <!-- Create Modal -->
+  <!-- Create Modal -->
+<div *ngIf="isCreateModalOpen" class="modal">
+    <div class="modal-content">
+      <span class="close" (click)="closeCreateModal()">&times;</span>
+      <h3 style="color: rgb(52, 82, 138); text-decoration: underline; font-size: 19px;">Create New Track</h3>
+      <form>
+        <label for="newTitle">Title:</label>
+        <input id="newTitle" [(ngModel)]="newTrack.Title" name="title" />
+        <label for="newArtist">Artist:</label>
+        <input id="newArtist" [(ngModel)]="newTrack.Artist" name="artist" />
+        <label for="newAlbum">Album:</label>
+        <input id="newAlbum" [(ngModel)]="newTrack.Album" name="album" />
+        <label for="newGenre">Genre:</label>
+        <select id="newGenre" [(ngModel)]="newTrack.Genre_Name" name="genre" style="width: 99%;">
+            <option *ngFor="let genre of genres" [value]="genre.id">{{ genre.name }}</option>
+          </select><br><br>
+          <label for="newTRelease_year">Release_year:</label>
+        <input id="newRelease_year" [(ngModel)]="newTrack.Release_year" name="Release_year" />
+          
+          
+        <label for="newDuration">Duration:</label>
+        <input id="newDuration" [(ngModel)]="newTrack.Duration" name="duration" />
+      </form>
+      <button (click)="saveNewTrack()" class="save-btn">Save</button>
+    </div>
+  </div>
+  
+  <!-- Edit Modal -->
+  <div *ngIf="isEditModalOpen" class="modal">
+    <div class="modal-content">
+      <span class="close" (click)="closeEditModal()">&times;</span>
+      <h3 style="color: rgb(52, 82, 138); text-decoration: underline; font-size: 19px;">Edit Track</h3>
+      <form>
+        <label for="editTitle">Title:</label>
+        <input id="editTitle" [(ngModel)]="trackToEdit!.Title" name="title" />
+        <label for="editArtist">Artist:</label>
+        <input id="editArtist" [(ngModel)]="trackToEdit!.Artist" name="artist" />
+        <label for="editAlbum">Album:</label>
+        <input id="editAlbum" [(ngModel)]="trackToEdit!.Album" name="album" />
+        <label for="editGenre" >Genre:</label>
+        <select id="editGenre" [(ngModel)]="trackToEdit!.Genre_Name" name="genre" style="width: 99%;">
+          <option *ngFor="let genre of genres" [value]="genre.id">{{ genre.name }}</option>
+        </select><br><br>
+        <label for="editRelease_year">Release_year:</label>
+        <input id="editRelease_year" [(ngModel)]="trackToEdit!.Release_year" name="Release_year" />
+        
+
+        <label for="editDuration">Duration:</label>
+        <input id="editDuration" [(ngModel)]="trackToEdit!.Duration" name="duration" />
+      </form>
+      <button (click)="saveEdit()" class="save-btn">Save</button>
+    </div>
+  </div>
+  
+
+</div>
+
+
+
+

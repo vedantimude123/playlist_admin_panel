@@ -1,0 +1,25 @@
+<div class="bookmark-container">
+    <div class="controls">
+        <h2>Bookmarked Tracks</h2>
+    </div>
+
+    <div class="card-grid">
+        <div class="card" *ngFor="let track of bookmarkedTrack">
+            <div class="card-header">
+                <h3>{{ track.Title }}</h3>
+                <p>{{ track.Artist }} - {{ track.Album }}</p>
+                <span class="release-year">{{ track.Release_year }}</span>
+            </div>
+
+            <div class="card-body">
+                <div class="genre-duration">
+                    <span class="genre">{{ track.Genre_Name }}</span>
+                    <span class="duration">{{ track.Duration }}</span>
+                </div>
+            </div>
+
+            <div class="card-footer">
+            </div>
+        </div>
+    </div>
+</div>

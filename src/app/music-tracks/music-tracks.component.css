@@ -1,0 +1,374 @@
+.create-btn {
+    background-color:indianred;;
+    color: #fff;
+    padding: 6px 7px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 14px;
+    animation: _ngcontent-ng-c3246774870_pulse 1.5s infinite;
+    font-weight: bolder;
+        box-shadow: 0 0 8px rgba(35, 1, 63, 0.5);
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        animation: pulse 1.5s infinite;
+
+}
+
+
+.create-btn:hover {
+    background-color: #d9534f;
+    transform: scale(1.05);
+}
+
+.search-bar {
+    padding: 12.5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex: 1;
+    max-width: 200px; 
+    margin-top: 4%;
+    background: rgb(220, 252, 186);
+}
+
+.music-tracks-container .controls {
+    display: flex;
+    margin-bottom: 20px;
+    margin-left: 42%;
+}
+
+.search-bar:focus {
+    box-shadow: 0 0 8px rgba(231, 245, 35, 0.5);
+}
+
+/* Pulse animation for button */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Music Tracks Container */
+.music-tracks-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* padding: 20px; */
+    background-color:#fafdf8; /* Light background */
+    font-family: 'Arial', sans-serif; /* Font style */
+}
+
+/* Card Grid Styles */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    gap: 20px; /* Space between cards */
+    width: 100%; /* Full width */
+    max-width: 1200px; /* Maximum width for grid */
+}
+
+/* Card Styles */
+.card {
+    background-color: #ffffff; /* White background for cards */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: transform 0.2s, box-shadow 0.2s; /* Animation for hover effect */
+    padding: 17px;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+}
+
+/* Card Header Styles */
+.card-header {
+    padding: 10px;
+    border-bottom: 1.5px solid #e0e0e0;
+    background: rgb(247, 247, 214);
+}
+
+.card-header h3 {
+    margin: 0;
+    color: #333; /* Dark text color */
+    font-size: 1.5rem; /* Font size for title */
+}
+
+.card-header p {
+    margin: 5px 0 0;
+    color: #666; /* Lighter text for artist and album */
+    font-size: 1rem;
+}
+
+/* Release Year Styles */
+.release-year {
+    font-size: 0.84rem;
+    color: #a3a3a3; /* Light gray for year */
+}
+
+/* Card Body Styles */
+.card-body {
+    padding: 15px;
+}
+
+/* Genre and Duration Styles */
+.genre-duration {
+    display: flex;
+    justify-content: space-between;
+}
+
+.genre {
+    background-color: #e0f7fa; /* Light blue background */
+    padding: 5px 10px;
+    border-radius: 20px; /* Rounded corners */
+    font-size: 0.9rem;
+    justify-content: center;
+    
+    
+}
+
+.duration {
+    background-color: #e0f7fa; /* Light blue background */
+    padding: 5px 10px;
+    border-radius: 20px; /* Rounded corners */
+    font-size: 0.9rem;
+    
+}
+
+/* Card Footer Styles */
+.card-footer {
+    padding: 15px;
+    display: flex;
+    justify-content: center; /* Center the button */
+    gap: 14px;
+}
+
+/* Edit Button Styles (similar to Delete) */
+.edit-btn {
+    background-color: cadetblue; /* Same as delete button */
+    color: white; /* White text */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth background change */
+}
+
+/* Delete Button Styles */
+.delete-btn {
+    background-color: cadetblue; /* Red background */
+    color: white; /* White text */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth background change */
+}
+.edit-btn:hover, .delete-btn:hover {
+    background-color: rgb(4, 61, 63); /* Darker red on hover for both buttons */
+    transform: scale(1.05); /* Slight grow effect */
+}
+.save-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 9px;
+    padding: 5px 47px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+    margin-left: 35%;
+    font-size: 17px;
+}
+
+/* Hover effect */
+.save-btn:hover {
+    background-color: #388E3C; /* Darker green on hover */
+    transform: scale(1.05); /* Slight grow effect */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Add shadow effect on hover */
+}
+
+/* Active effect on button click */
+.save-btn:active {
+    transform: scale(0.95); /* Slightly shrink when clicked */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Change shadow when active */
+}
+/* Styles for Genre and Duration section */
+.genre-duration {
+    display: flex; /* Use flexbox for side-by-side layout */
+    justify-content: space-between; /* Space out the items */
+    margin-top: 10px; /* Space above the row */
+
+}
+
+.genre,
+.duration {
+    flex: 1; /* Allow both items to take equal space */
+    margin-right: 10px; /* Space between genre and duration */
+    text-wrap: nowrap;
+    justify-content: center;
+
+}
+
+/* Remove right margin from the last item */
+.duration {
+    margin-left: 50%;
+    display: flex;
+    justify-content: center;
+
+}
+
+/* Optional: Additional styling adjustments */
+label {
+    display: block; /* Make labels block elements for better spacing */
+    margin-bottom: 5px; /* Space between label and input */
+}
+/* Styles for Artist and Album section */
+.artist-album {
+    display: flex; /* Use flexbox for side-by-side layout */
+    margin-bottom: 10px; /* Space below the row */
+}
+
+.artist,
+.album {
+    flex: 1; /* Allow both items to take equal space */
+    margin-right: 10px; /* Space between artist and album */
+}
+
+/* Remove right margin from the last item */
+.album {
+    margin-right: 0; /* No right margin for the last item */
+}
+
+/* Optional: Style adjustments */
+label {
+    display: block; /* Make labels block elements for better spacing */
+    margin-bottom: 5px; /* Space between label and input */
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* High z-index to overlay on content */
+}
+
+.modal-content {
+    background-color: #e8ebf1; /* White background for modal */
+    padding: 17px;
+    border-radius: 10px; /* Rounded corners */
+    width: 435px; /* Increased width for modal */
+    position: relative; /* Allows absolute positioning of the shadow */
+    z-index: 1; /* Ensures the modal is above the shadow */
+    border: 7px solid rgba(219, 48, 48, 0.6); /* Light border color for contrast */
+}
+
+/* Create a shadow effect using a pseudo-element */
+.modal-content::before {
+    content: '';
+    position: absolute;
+    top: -5px; /* Adjust as needed */
+    left: -5px; /* Adjust as needed */
+    right: -5px; /* Adjust as needed */
+    bottom: -5px; /* Adjust as needed */
+    background-color: transparent; /* Make sure background is transparent */
+    border-radius: 10px; /* Match modal border radius */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Shadow effect around the modal */
+    z-index: -1; /* Ensure the shadow is behind the modal */
+}
+
+/* Optional: Border color change on hover */
+.modal-content:hover {
+    border: 7px solid #00aaff; /* Change border color on hover for emphasis */
+}
+.card:hover{
+    border: 1px solid #860919;
+}
+
+
+
+
+/* Input Field Styles */
+input {
+    width: 93.5%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    
+}
+
+/* Close Button Styles */
+.close {
+    cursor: pointer;
+    font-size: 30px;
+    color: #666;
+    float: right;
+}
+
+
+.confirm-btn {
+    background-color: #4caf50; /* Green background for confirm */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-right: 10px; /* Space between buttons */
+    transition: background-color 0.3s;
+}
+
+.confirm-btn:hover {
+    background-color: #388e3c; /* Darker green on hover */
+}
+
+/* Cancel button */
+.cancel-btn {
+    background-color: #757575; /* Gray color for cancel button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cancel-btn:hover {
+    background-color: #616161; /* Darker gray on hover */
+    transform: scale(1.05); /* Slight grow effect */
+}
+
+/* Animation for modal */
+@keyframes zoomIn {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Animation for modal on open */
+.zoomIn-animation {
+    animation: zoomIn 0.3s ease;
+}
+
+
+/* Add a class for the bookmarked button */
+.bookmarked {
+    color: red; /* Bookmark color */
+  }
+  
